@@ -8,7 +8,7 @@
     const form = useForm();
 
     const onSubmit = () => {
-        $form.post(route("verification.send"));
+        $form.post(window.route("verification.send"));
     };
 
     let verificationLinkSent;
@@ -46,7 +46,7 @@
             </BreezeButton>
 
             <Link
-                href={route("logout")}
+                href={window.route("logout")}
                 method="post"
                 as="button"
                 class="underline text-sm text-gray-600 hover:text-gray-900"

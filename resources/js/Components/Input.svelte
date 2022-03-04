@@ -10,7 +10,6 @@
     export let value = "";
     export { className as class };
     function onInput() {
-        console.log("WOHOOO bvalue", value);
         dispatch("input", value);
     }
 

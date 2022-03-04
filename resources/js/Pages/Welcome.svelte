@@ -19,14 +19,14 @@
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             {#if user}
                 <Link
-                    href={route("dashboard")}
+                    href={window.route("dashboard")}
                     class="text-sm text-gray-700 underline"
                 >
                     Dashboard
                 </Link>
             {:else}
                 <Link
-                    href={route("login")}
+                    href={window.route("login")}
                     class="text-sm text-gray-700 underline"
                 >
                     Log in
@@ -34,7 +34,7 @@
 
                 {#if canRegister}
                     <Link
-                        href={route("register")}
+                        href={window.route("register")}
                         class="ml-4 text-sm text-gray-700 underline"
                     >
                         Register

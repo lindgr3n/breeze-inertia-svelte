@@ -23,7 +23,7 @@
     });
 
     const onSubmit = () => {
-        $form.post(route("password.update"), {
+        $form.post(window.route("password.update"), {
             onFinish: () => $form.reset("password", "password_confirmation"),
         });
     };

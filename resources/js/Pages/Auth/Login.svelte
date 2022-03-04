@@ -30,7 +30,7 @@
         //     password: $form.password,
         //     remember: false,
         // });
-        $form.post(route("login"), {
+        $form.post(window.route("login"), {
             onFinish: () => $form.reset(),
         });
         console.log("POSTED", err);
