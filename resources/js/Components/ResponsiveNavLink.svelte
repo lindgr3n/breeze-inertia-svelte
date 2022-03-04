@@ -1,10 +1,11 @@
 <script setup>
-    import { Link } from "@inertiajs/inertia-svelte";
+    import { inertia, Link } from "@inertiajs/inertia-svelte";
 
     let classes;
-
+    export let active = false;
+    export let type = "a";
     export let href;
-    export let active;
+    export let method = "get";
 
     $: {
         classes = active
@@ -13,8 +14,14 @@
     }
 </script>
 
-<template>
-    <Link {href} class={classes}>
+{#if type !== "button"}
+    <Link {...$$restProps} {href} class={classes}>
         <slot />
     </Link>
-</template>
+{:else}
+    <button
+        use:inertia={{ href: href, method: method }}
+        type="button"
+        class={classes}><slot /></button
+    >
+{/if}

@@ -1,5 +1,12 @@
 <script>
     import BreezeAuthenticatedLayout from "@/Layouts/Authenticated.svelte";
+
+    // Remove linting warning coming from HandleInertiaRequests
+    // https://inertiajs.com/shared-data
+    /* svelte-ignore unused-export-let */
+    export let errors = {};
+    /* svelte-ignore unused-export-let */
+    export let auth = {};
 </script>
 
 <svelte:head>
@@ -20,4 +27,5 @@
             </div>
         </div>
     </div>
+    <slot />
 </BreezeAuthenticatedLayout>

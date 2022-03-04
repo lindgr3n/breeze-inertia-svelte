@@ -1,4 +1,4 @@
-<script setup>
+<script>
     import { inertia, Link } from "@inertiajs/inertia-svelte";
 
     export let type = "a";
