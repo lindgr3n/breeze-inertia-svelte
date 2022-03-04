@@ -1,12 +1,10 @@
 <script>
-    // import { page } from "@inertiajs/inertia-svelte";
-    // import { error } from "laravel-mix/src/Log";
-
-    // const errors = computed(() => usePage().props.value.errors);
     let className;
+    let hasErrors = false;
+
     export { className as class };
     export let errors = {};
-    let hasErrors = false;
+
     $: {
         hasErrors = Object.keys(errors).length > 0;
     }
@@ -20,7 +18,6 @@
 
         <ul class="mt-3 list-disc list-inside text-sm text-red-600">
             {#each Object.keys(errors) as key, index}
-                <!-- content here -->
                 <li key={index}>{errors[key]}</li>
             {/each}
         </ul>

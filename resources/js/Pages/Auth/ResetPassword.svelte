@@ -6,11 +6,12 @@
     import BreezeValidationErrors from "@/Components/ValidationErrors.svelte";
     import { useForm } from "@inertiajs/inertia-svelte";
 
+    let err = {};
+
     export let errors = {};
     export let email;
     export let token;
 
-    let err = {};
     $: {
         err = errors;
     }

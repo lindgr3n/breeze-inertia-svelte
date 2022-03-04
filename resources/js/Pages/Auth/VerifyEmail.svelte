@@ -3,6 +3,8 @@
     import BreezeGuestLayout from "@/Layouts/Guest.svelte";
     import { Link, useForm } from "@inertiajs/inertia-svelte";
 
+    let verificationLinkSent;
+
     export let status;
 
     const form = useForm();
@@ -11,7 +13,6 @@
         $form.post(window.route("verification.send"));
     };
 
-    let verificationLinkSent;
     $: {
         verificationLinkSent = status === "verification-link-sent";
     }
@@ -28,13 +29,15 @@
         didn't receive the email, we will gladly send you another.
     </div>
 
-    <div
-        class="mb-4 font-medium text-sm text-green-600"
-        v-if="verificationLinkSent"
-    >
-        A new verification link has been sent to the email address you provided
-        during registration.
-    </div>
+    {#if verificationLinkSent}
+        <div
+            class="mb-4 font-medium text-sm text-green-600"
+            v-if="verificationLinkSent"
+        >
+            A new verification link has been sent to the email address you
+            provided during registration.
+        </div>
+    {/if}
 
     <form on:submit|preventDefault={onSubmit}>
         <div class="mt-4 flex items-center justify-between">

@@ -6,30 +6,23 @@
     import BreezeLabel from "@/Components/Label.svelte";
     import BreezeValidationErrors from "@/Components/ValidationErrors.svelte";
     import { Link, useForm } from "@inertiajs/inertia-svelte";
-    import { Inertia } from "@inertiajs/inertia";
+
+    let err = {};
 
     export let errors = {};
-
     export let canResetPassword;
     export let status;
-
     const form = useForm({
         email: "",
         password: "",
         remember: false,
     });
 
-    let err = {};
     $: {
         err = errors;
     }
 
     const onSubmit = () => {
-        // Inertia.post("/login", {
-        //     email: $form.email,
-        //     password: $form.password,
-        //     remember: false,
-        // });
         $form.post(window.route("login"), {
             onFinish: () => $form.reset(),
         });

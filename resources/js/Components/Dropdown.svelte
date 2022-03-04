@@ -1,8 +1,10 @@
 <script setup>
     import { onDestroy, onMount } from "svelte";
 
-    export let align = "right";
-    export let width = "48";
+    let className;
+    let open = false;
+
+    export { className as class };
     export let contentClasses = "py-1 bg-white";
 
     function closeOnEscape(e) {
@@ -13,25 +15,6 @@
 
     onMount(() => document.addEventListener("keydown", closeOnEscape));
     onDestroy(() => document.removeEventListener("keydown", closeOnEscape));
-    let widthClass = "w-48";
-    let alignmentClasses = "";
-    // $: {
-    //     widthClass = {
-    //         "48": "w-48",
-    //     };
-    // }
-
-    $: {
-        if (align === "left") {
-            alignmentClasses = "origin-top-left left-0";
-        } else if (align === "right") {
-            alignmentClasses = "origin-top-right right-0";
-        } else {
-            alignmentClasses = "origin-top";
-        }
-    }
-
-    let open = false;
 </script>
 
 <div class="relative">
@@ -43,7 +26,7 @@
     {#if open}
         <div class="fixed inset-0 z-40" on:click={(evt) => (open = false)} />
         <div
-            class="absolute z-50 mt-2 rounded-md shadow-lg {widthClass} {alignmentClasses}"
+            class="absolute z-50 mt-2 rounded-md shadow-lg {className}"
             on:click={(evt) => (open = false)}
         >
             <div

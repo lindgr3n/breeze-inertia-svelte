@@ -1,6 +1,5 @@
 <script setup>
     import { createEventDispatcher, onMount } from "svelte";
-    import log from "tailwindcss/lib/util/log";
 
     const dispatch = createEventDispatcher();
 
@@ -9,6 +8,7 @@
 
     export let value = "";
     export { className as class };
+
     function onInput() {
         dispatch("input", value);
     }

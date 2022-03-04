@@ -43,7 +43,9 @@
                     <div class="hidden sm:flex sm:items-center sm:ml-6">
                         <!-- Settings Dropdown -->
                         <div class="ml-3 relative">
-                            <BreezeDropdown align="right" width="48">
+                            <BreezeDropdown
+                                class="w-48 origin-top-right right-0"
+                            >
                                 <span
                                     class="inline-flex rounded-md"
                                     slot="trigger"

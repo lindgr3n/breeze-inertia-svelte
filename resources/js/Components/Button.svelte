@@ -1,5 +1,6 @@
 <script>
     let className;
+
     export let type = "submit";
     export { className as class };
 </script>

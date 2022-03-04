@@ -1,12 +1,13 @@
 <script>
     import { createEventDispatcher } from "svelte";
 
+    const dispatch = createEventDispatcher();
+
     export let checked = false;
     export let value = null;
 
     let proxyChecked = checked;
 
-    const dispatch = createEventDispatcher();
     function onChange() {
         dispatch("update:checked", proxyChecked);
     }

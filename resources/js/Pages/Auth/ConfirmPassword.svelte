@@ -1,4 +1,4 @@
-<script setup>
+<script>
     import BreezeButton from "@/Components/Button.svelte";
     import BreezeGuestLayout from "@/Layouts/Guest.svelte";
     import BreezeInput from "@/Components/Input.svelte";
@@ -20,6 +20,7 @@
 <svelte:head>
     <title>Confirm Password</title>
 </svelte:head>
+
 <BreezeGuestLayout>
     <div class="mb-4 text-sm text-gray-600">
         This is a secure area of the application. Please confirm your password
