@@ -33,7 +33,6 @@
         $form.post(window.route("login"), {
             onFinish: () => $form.reset(),
         });
-        console.log("POSTED", err);
     };
 </script>
 
@@ -89,7 +88,7 @@
         <div class="flex items-center justify-end mt-4">
             {#if canResetPassword}
                 <Link
-                    href={route("password.request")}
+                    href={window.route("password.request")}
                     class="underline text-sm text-gray-600 hover:text-gray-900"
                 >
                     Forgot your password?

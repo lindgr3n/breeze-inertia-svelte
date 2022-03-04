@@ -9,7 +9,6 @@
     let hasErrors = false;
     $: {
         hasErrors = Object.keys(errors).length > 0;
-        console.log("WOHOOO", hasErrors, errors);
     }
 </script>
 
