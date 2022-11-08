@@ -18,16 +18,24 @@
 </script>
 
 <div class="relative">
-    <div on:click={(evt) => (open = !open)}>
+    <div
+        on:click={(evt) => (open = !open)}
+        on:keypress={(evt) => (open = !open)}
+    >
         <slot name="trigger" />
     </div>
 
     <!-- Full Screen Dropdown Overlay -->
     {#if open}
-        <div class="fixed inset-0 z-40" on:click={(evt) => (open = false)} />
+        <div
+            class="fixed inset-0 z-40"
+            on:click={(evt) => (open = false)}
+            on:keypress={(evt) => (open = false)}
+        />
         <div
             class="absolute z-50 mt-2 rounded-md shadow-lg {className}"
             on:click={(evt) => (open = false)}
+            on:keypress={(evt) => (open = false)}
         >
             <div
                 class="rounded-md ring-1 ring-black ring-opacity-5 {contentClasses}"
