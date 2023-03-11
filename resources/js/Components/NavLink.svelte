@@ -1,5 +1,5 @@
 <script setup>
-    import { Link } from "@inertiajs/inertia-svelte";
+    import { Link } from "@inertiajs/svelte";
 
     let classes;
 

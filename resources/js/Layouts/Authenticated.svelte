@@ -4,7 +4,7 @@
     import BreezeDropdownLink from "@/Components/DropdownLink.svelte";
     import BreezeNavLink from "@/Components/NavLink.svelte";
     import BreezeResponsiveNavLink from "@/Components/ResponsiveNavLink.svelte";
-    import { Link, page } from "@inertiajs/inertia-svelte";
+    import { Link, page } from "@inertiajs/svelte";
 
     let showingNavigationDropdown = false;
 

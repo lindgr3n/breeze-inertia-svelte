@@ -1,6 +1,6 @@
 <script>
     import BreezeApplicationLogo from "@/Components/ApplicationLogo.svelte";
-    import { Link } from "@inertiajs/inertia-svelte";
+    import { Link } from "@inertiajs/svelte";
 </script>
 
 <div
