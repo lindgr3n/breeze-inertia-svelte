@@ -20,14 +20,14 @@
             {#if user}
                 <Link
                     href={window.route("dashboard")}
-                    class="text-sm text-gray-700 underline"
+                    class="text-sm text-gray-700 dark:text-gray-500 underline"
                 >
                     Dashboard
                 </Link>
             {:else}
                 <Link
                     href={window.route("login")}
-                    class="text-sm text-gray-700 underline"
+                    class="text-sm text-gray-700 dark:text-gray-500 underline"
                 >
                     Log in
                 </Link>
@@ -35,7 +35,7 @@
                 {#if canRegister}
                     <Link
                         href={window.route("register")}
-                        class="ml-4 text-sm text-gray-700 underline"
+                        class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline"
                     >
                         Register
                     </Link>

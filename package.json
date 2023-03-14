@@ -1,30 +1,20 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
+        "dev": "vite",
+        "build": "vite build && vite build --ssr"
     },
+    "type": "module",
     "devDependencies": {
+        "@inertiajs/svelte": "^1.0.2",
+        "@sveltejs/vite-plugin-svelte": "^2.0.3",
         "@tailwindcss/forms": "^0.5.3",
-        "@vue/compiler-sfc": "^3.2.47",
-        "autoprefixer": "^10.4.14",
-        "axios": "^1.3",
-        "laravel-mix": "^6.0.49",
-        "laravel-mix-svelte": "^0.5.0",
-        "lodash": "^4.17.21",
-        "postcss": "^8.4.21",
-        "postcss-import": "^15.1.0",
-        "prettier-plugin-svelte": "^2.9.0",
-        "svelte": "^3.56.0",
-        "svelte-loader": "^3.1.7",
-        "tailwindcss": "^3.2.7"
-    },
-    "dependencies": {
-        "@inertiajs/svelte": "^1.0.2"
+        "autoprefixer": "^10.4.12",
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.7.2",
+        "lodash": "^4.17.19",
+        "postcss": "^8.4.18",
+        "tailwindcss": "^3.2.1",
+        "vite": "^4.0.0"
     }
 }

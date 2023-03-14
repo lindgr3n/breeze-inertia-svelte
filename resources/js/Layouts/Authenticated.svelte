@@ -70,16 +70,26 @@
                                         </svg>
                                     </button>
                                 </span>
+                                <div slot="content">
+                                    <BreezeDropdownLink
+                                        
+                                        href={window.route("profile.edit")}
+                                        as="button"
+                                        type="button"
+                                    >
+                                        Profile
+                                    </BreezeDropdownLink>
+                                    <BreezeDropdownLink
+                                        
+                                        href={window.route("logout")}
+                                        method="post"
+                                        as="button"
+                                        type="button"
+                                    >
+                                        Log Out
+                                    </BreezeDropdownLink>
 
-                                <BreezeDropdownLink
-                                    slot="content"
-                                    href={window.route("logout")}
-                                    method="post"
-                                    as="button"
-                                    type="button"
-                                >
-                                    Log Out
-                                </BreezeDropdownLink>
+                                </div>
                             </BreezeDropdown>
                         </div>
                     </div>

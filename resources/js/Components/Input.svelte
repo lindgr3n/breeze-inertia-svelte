@@ -4,8 +4,8 @@
     const dispatch = createEventDispatcher();
 
     let className;
-    let inputElement;
 
+    export let ref;
     export let value = "";
     export { className as class };
 
@@ -14,16 +14,18 @@
     }
 
     onMount(() => {
-        if (inputElement.hasAttribute("autofocus")) {
-            inputElement.focus();
+        if (ref.hasAttribute("autofocus")) {
+            ref.focus();
         }
     });
 </script>
 
+<svelte:options accessors={true}/>
 <input
     class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm {className}"
     bind:value
     on:input={onInput}
-    bind:this={inputElement}
+    on:keyup={(e) => dispatch('keyup', e)}
+    bind:this={ref}
     {...$$restProps}
 />

@@ -3,7 +3,7 @@
     import BreezeCheckbox from "@/Components/Checkbox.svelte";
     import BreezeGuestLayout from "@/Layouts/Guest.svelte";
     import BreezeInput from "@/Components/Input.svelte";
-    import BreezeLabel from "@/Components/Label.svelte";
+    import BreezeLabel from "@/Components/InputLabel.svelte";
     import BreezeValidationErrors from "@/Components/ValidationErrors.svelte";
     import { Link, useForm } from "@inertiajs/svelte";
 

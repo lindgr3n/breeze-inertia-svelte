@@ -1,4 +1,5 @@
-require("./bootstrap");
+import "./bootstrap";
+import "../css/app.css";
 
 import { createInertiaApp } from "@inertiajs/svelte";
 
@@ -7,9 +8,12 @@ const appName =
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => require(`./Pages/${name}.svelte`),
+    resolve: (name) => {
+        const pages = import.meta.glob("./Pages/**/*.svelte", { eager: true });
+        return pages[`./Pages/${name}.svelte`];
+    },
     setup({ el, App, props }) {
-        new App({ target: el, props });
+        new App({ target: el /*, props */ });
     },
     progress: {
         color: "#4B5563",
